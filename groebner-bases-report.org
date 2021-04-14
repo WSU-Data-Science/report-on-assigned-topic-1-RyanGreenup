@@ -88,8 +88,10 @@ of polynomial equations.
     - Try and implement Buchberger's Algorithm from scratch using
       functions and iterations in /Python/ in order to return a Reduced
       Groebner Basis
+      - See Definition 4 of [[cite:coxIdealsVarietiesAlgorithms1997][\S 7]]
     - Try to demonstrate, in good detail, the relationship between
       the Euclidean Algorithm and Buchberger's Algorithm
+      - See [[cite:coxIdealsVarietiesAlgorithms1997][p. 95]]
     - Try to implement Buchberger's Algorithm using /Normal Selection
       Strategy/ [[cite:hibiGrobnerBasesStatistics2014][\S 3.1.2]], see also cite:sympydevelopmentteamSympyPolysGroebnertools,prof.berndsturmfelsIntroductionGrobnerBases2017.
 
@@ -134,7 +136,8 @@ of polynomial equations.
         Groebner Bases.
 
   The theory of Groebner Bases even provides a framework to
-  re-express the Fundamental Theorem of Algebra cite:sturmfelsSolvingSystemsPolynomial2002.
+  re-express the Fundamental Theorem of Algebra
+  cite:prof.berndsturmfelsIntroductionGrobnerBases2017 .
 * Polynomials
   Let \(K\) be some field (typically \(\mathbb{Q}, \mathbb{R},
 \mathbb{C}\), see \S [[#algebra-fields]] for more information)
