@@ -8,7 +8,7 @@ pandoc groebner-bases-report.tex        \
     -o "${FILENAME}"
 
     ## Fix the Headings 
-    sd '(^# .+) \{#.+\}$' '$1' "${FILENAME}"
+    sd '(^#+ .+) \{#.+\}$' '$1' "${FILENAME}"
 
     ## Superscript the References
     sd '(\[@.*\])' '<sup>  $1  </sup>' "${FILENAME}"

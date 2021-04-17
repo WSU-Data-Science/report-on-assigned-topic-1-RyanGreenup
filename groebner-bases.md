@@ -8,7 +8,7 @@ title: Groebner Bases
 Groebner bases is one of the main practical tools for solving systems of
 polynomial equations.
 
-# Summary {#sec:org73c5bea}
+# Summary
 
 Much of the theory of Groebner Basis is buried under needless amounts of
 abstract algebra, this is for the most part unnecessary and if I were to
@@ -16,26 +16,26 @@ begin this investigation again I would first implement Buchberger's
 Algorithm, manually, using *Sympy* by referring to:
 
 -   Lectures 14 and 15 of Andreas Schulz OCW Integer Programming Course
-    [@andreasschulzIntegerProgrammingCombinatorial]
+    <sup>  [@andreasschulzIntegerProgrammingCombinatorial]  </sup>
 
 -   Chapters 1-2 of *Ideals, Varieties and Algorithms*
-    [@coxIdealsVarietiesAlgorithms1997]
+    <sup>  [@coxIdealsVarietiesAlgorithms1997]  </sup>
 
 -   Lecture 15 of Judy Holdenner's course on Algebraic Geometry
-    [@judyholdenerAlgebraicGeometry2013]
+    <sup>  [@judyholdenerAlgebraicGeometry2013]  </sup>
 
 -   Lecture 14 of Pablo Parrilo's course on Algebraic Techniques
-    [@pabloparriloAlgebraicTechniquesSemidefinite]
+    <sup>  [@pabloparriloAlgebraicTechniquesSemidefinite]  </sup>
 
 -   The *Sympy* source code for:
 
     -   `polys.roebnertools`
-        [@sympydevelopmentteamSympyPolysGroebnertools]
+        <sup>  [@sympydevelopmentteamSympyPolysGroebnertools]  </sup>
 
-    -   `solvers.polysys` [@sympydevelopmentteamSympySolversPolysys]
+    -   `solvers.polysys` <sup>  [@sympydevelopmentteamSympySolversPolysys]  </sup>
 
 -   The *Sympy* documentation for *Polynomial Manipulation*
-    [@sympydevelopmentteamGrobnerBasesTheir2021]
+    <sup>  [@sympydevelopmentteamGrobnerBasesTheir2021]  </sup>
 
 Unfortunately this was not an option for me as these resources were not
 known to me until very late in the investigation. I hope that this
@@ -54,7 +54,7 @@ they can:
 
 Although `sympy` is probably not the best tool for studying commutative
 algebra specifically (and the implementation may not be battle tested
-either, see e.g. [@WrongGroebnerBasis]), the simple and accessible
+either, see e.g. <sup>  [@WrongGroebnerBasis]  </sup>), the simple and accessible
 nature of `sympy` made it's documentation by far the most valuable
 resource for grappling with this topic.
 
@@ -64,50 +64,50 @@ An extension to this investigation would be to:
     functions and iterations in *Python* in order to return a Reduced
     Groebner Basis
 
-    -   See Definition 4 of [@coxIdealsVarietiesAlgorithms1997 §7]
+    -   See Definition 4 of <sup>  [@coxIdealsVarietiesAlgorithms1997 §7]  </sup>
 
 -   Try to demonstrate, in good detail, the relationship between the
     Euclidean Algorithm and Buchberger's Algorithm
 
-    -   See [@coxIdealsVarietiesAlgorithms1997 p. 95]
+    -   See <sup>  [@coxIdealsVarietiesAlgorithms1997 p. 95]  </sup>
 
 -   Try to implement Buchberger's Algorithm using *Normal Selection
-    Strategy* [@hibiGrobnerBasesStatistics2014 §3.1.2], see also
-    [@sympydevelopmentteamSympyPolysGroebnertools; @prof.berndsturmfelsIntroductionGrobnerBases2017].
+    Strategy* <sup>  [@hibiGrobnerBasesStatistics2014 §3.1.2]  </sup>, see also
+    <sup>  [@sympydevelopmentteamSympyPolysGroebnertools; @prof.berndsturmfelsIntroductionGrobnerBases2017]  </sup>.
 
-## Further Resources {#sec:org91084bd}
+## Further Resources
 
 The following resources may be useful as reference material, but I would
 advice against using these as any sort of primary material, in order of
 recommendation (but not necessarily relevance)
 
 1.  Judson, T. W., & Open Textbook Library, Abstract algebra theory and
-    applications [@judsonAbstractAlgebraTheory2016]
+    applications <sup>  [@judsonAbstractAlgebraTheory2016]  </sup>
 
 2.  Howlett, R., An undergraduate course in Abstract Algebra: Course
-    notes for MATH3002 [@roberthowlettUndergraduateCourseAbstract]
+    notes for MATH3002 <sup>  [@roberthowlettUndergraduateCourseAbstract]  </sup>
 
-3.  Lee, G., Abstract Algebra [@gregoryleeAbstractAlgebra2018]
+3.  Lee, G., Abstract Algebra <sup>  [@gregoryleeAbstractAlgebra2018]  </sup>
 
-4.  Grillet, P. A., Abstract Algebra [@grilletAbstractAlgebra2007]
+4.  Grillet, P. A., Abstract Algebra <sup>  [@grilletAbstractAlgebra2007]  </sup>
 
 5.  Hibi, T., Grobner Bases: Statistics and Software Systems
-    [@hibiGrobnerBasesStatistics2014]
+    <sup>  [@hibiGrobnerBasesStatistics2014]  </sup>
 
 6.  Adams, W. W., & Loustaunau, P., An introduction to Gröbner bases
-    [@adamsIntroductionGrobnerBases1994]
+    <sup>  [@adamsIntroductionGrobnerBases1994]  </sup>
 
 7.  Nicodemi, O., Sutherland, M. A., & Towsley, G. W., An introduction
     to abstract algebra with notes to the future teacher
-    [@nicodemiIntroductionAbstractAlgebra2007a]
+    <sup>  [@nicodemiIntroductionAbstractAlgebra2007a]  </sup>
 
 Further material that I haven't had a chance to look throughA: includes:
 
 -   Becker, T., Weispfenning, V., & Kredel, H., Gröbner bases: a
     computational approach to commutative algebra
-    [@beckerGrobnerBasesComputational1993]
+    <sup>  [@beckerGrobnerBasesComputational1993]  </sup>
 
-# Introduction {#sec:org381cde0}
+# Introduction
 
 A Groebner Basis is a set of polynomials that spans the solution space
 of another set of polynomials, they are of interest to us because they
@@ -115,12 +115,12 @@ are useful for solving systems of polynomial equations and provide a
 generalized theory that shows the relationships between:
 
 -   Polynomial Long Division with multiple variables and divisors, see
-    e.g. [@coxIdealsVarietiesAlgorithms1997 §3]
+    e.g. <sup>  [@coxIdealsVarietiesAlgorithms1997 §3]  </sup>
 
 -   The Division Algorithm see e.g. [@coxIdealsVarietiesAlgorithms1997
-    §3] and [@nicodemiIntroductionAbstractAlgebra2007a]
+    §3] and <sup>  [@nicodemiIntroductionAbstractAlgebra2007a]  </sup>
 
--   The LCM and GCD [@coxIdealsVarietiesAlgorithms1997 §2.6]
+-   The LCM and GCD <sup>  [@coxIdealsVarietiesAlgorithms1997 §2.6]  </sup>
 
 -   The Euclidean Algorithm and Gaussian Elimination
 
@@ -129,18 +129,18 @@ generalized theory that shows the relationships between:
 
 The theory of Groebner Bases even provides a framework to re-express the
 Fundamental Theorem of Algebra
-[@prof.berndsturmfelsIntroductionGrobnerBases2017] .
+<sup>  [@prof.berndsturmfelsIntroductionGrobnerBases2017]  </sup> .
 
-# Polynomials {#sec:org39547bd}
+# Polynomials
 
 Let $K$ be some field (typically $\mathbb{Q}, \mathbb{R},
 \mathbb{C}$, see §[9.1.1.6](#sec:org5f09c06){reference-type="ref"
 reference="sec:org5f09c06"} for more information)
 
-## Monomials {#sec:org6536914}
+## Monomials
 
 A *monomial* in the variables $x_1, x_2, \ldots x_n$ is given by:
-[@hibiGrobnerBasesStatistics2014 p. 3]
+<sup>  [@hibiGrobnerBasesStatistics2014 p. 3]  </sup>
 
 $$\begin{aligned}
    \prod^n_{i=1} \left[ x_i^{a_i} \right] = x_1^{1_1} \cdot x_2^{a_2} \cdot
@@ -148,16 +148,16 @@ $$\begin{aligned}
    \end{aligned}$$
 
 Note however that $a$ must be a non-negative integer
-[@e.h.connellElementsAbstractLinear2001 p. 48]
+<sup>  [@e.h.connellElementsAbstractLinear2001 p. 48]  </sup>
 
-### Degree {#sec:orga195d13}
+### Degree
 
 The degree is given by the sum of the exponents, so:
 
 $$\mathrm{deg}\left(   \prod^n_{i=1} \left[ x_i^{a_i} \right]   \right) =
     \sum^{n}_{i= 1}   \left[ a_i \right]$$
 
-### Terms {#sec:orgb84041e}
+### Terms
 
 A term is a monomial with a non-zero coefficient, so for example:
 
@@ -165,12 +165,12 @@ $$17 \cdot x_1^3 \cdot x_2^5 \cdot x_3^{13}$$
 
 Is a term with degree 21 $(3+5+13)$ and a coefficient of 17.
 
-### Polynomials {#sec:org2429ee0}
+### Polynomials
 
 A polynomial is a finite sum of terms, the degree of which is defined to
 be the maximum degree of any of the terms.
 
-#### Exception {#sec:org3332be8}
+#### Exception
 
 The polynomial:
 
@@ -183,7 +183,7 @@ work for it.
 Whereas $f=c, \quad \exists c \in \mathbb{C}$ does have 1 term, for
 which the degree is 0.
 
-#### Support of a polynomial {#sec:org61c2f60}
+#### Support of a polynomial
 
 The support of a polynomial $f$ is the set of monomials appearing in
 $f$, e.g. for the following 6th degree polynomial in 2 variables, the
@@ -194,12 +194,12 @@ $$f(x) = x^2+3x^3+4y \implies \mathrm{supp}\left(f\right) =
 
 The initial of the support $\mathrm{in}_{\prec}\left(f\right)$ is the
 polynomial with the highest ranking with respect to some ordering of the
-monomials (see §) [@hibiGrobnerBasesStatistics2014 1.1.5].
+monomials (see §) <sup>  [@hibiGrobnerBasesStatistics2014 1.1.5]  </sup>.
 
-##### Other Terminology {#sec:orgd96e70d}
+##### Other Terminology
 
 The following terms are commonly used:
-[@coxIdealsVarietiesAlgorithms1997 §2.2]
+<sup>  [@coxIdealsVarietiesAlgorithms1997 §2.2]  </sup>
 
 -   The $\mathrm{multidegree}\left(f\right)$, is the largest power of
     any variable of any monomial in a polynomial
@@ -227,7 +227,7 @@ $$f= 4x^2y^2 + 3x^3 + 7xy$$
 
 -   The Leading Term [^2] is $x^3$
 
-#### Homogenous Polynomial {#sec:org197934c}
+#### Homogenous Polynomial
 
 If all terms of a polynomial have an equal degree (say $\exists q
      \in \mathbb{N}$ Then that polynomial is said to be a *homogenous
@@ -237,7 +237,7 @@ $$x_1^{3}\cdot x_2^{4} \cdot x_3^{2} + x_1^{6}\cdot x_5^{2} \cdot x_7$$
 
 is a homogenous polynomial of degree 7.
 
-#### The Polynomial Ring {#sec:orgde6dd2c}
+#### The Polynomial Ring
 
 The Rings, Vectors and Polynomials
 
@@ -253,7 +253,7 @@ a Ring.
 
 Readers may be familiar with the axioms of a vector space, for which the
 set of polynomials in $K\left[x_1\right]$ of degree less than $n$ also
-satisfies [@larsonElementaryLinearAlgebra1991a §4.4], a ring structure
+satisfies <sup>  [@larsonElementaryLinearAlgebra1991a §4.4]  </sup>, a ring structure
 is much the same concept, it's a set with specific characteristics. One
 of the main differences is that while a vector space requires a scalar
 multiplicative identity, a ring structure does not.
@@ -264,22 +264,22 @@ multiplication by element-wise product would remedy this), see
 §[9.1.1.4](#sec:orgb572ffe){reference-type="ref"
 reference="sec:orgb572ffe"} for more information.
 
-# Ideals and Varieties {#sec:org2ee65a9}
+# Ideals and Varieties
 
-## Affine Space {#sec:org32570f6}
+## Affine Space
 
 The affine $n$-space of some field $K$ is given by:
-[@coxIdealsVarietiesAlgorithms1997 §1.1]
+<sup>  [@coxIdealsVarietiesAlgorithms1997 §1.1]  </sup>
 
 $$K^n=\left\{\left(a_1, a_2, a_3, \ldots, \a_n\right) \mid a_i \in K, \forall i \in \mathbb{Z}^+\right\}$$
 
 For example if $K$ was given by $\mathbb{R}$ the resulting affine
 $n$-space would be the *Cartesian Plane*.
 
-## Zero Point {#sec:org08d0ea0}
+## Zero Point
 
 The zero-point of some function $f\in K\left[\mathbf{X}_n\right]$ is a
-point in $K^n$: [@hibiGrobnerBasesStatistics2014]
+point in $K^n$: <sup>  [@hibiGrobnerBasesStatistics2014]  </sup>
 
 $$\begin{aligned}
       f\left( a_1, a_2, a_3 \ldots a_n \right) =0
@@ -289,11 +289,11 @@ In the broader context of equations rather than specifically functions,
 these points are often referred to as roots.
 
 These points are often referred to as roots
-[@judsonAbstractAlgebraTheory2016 §17.2], however this is usually in the
+<sup>  [@judsonAbstractAlgebraTheory2016 §17.2]  </sup>, however this is usually in the
 context of equations more broadly rather than functions specifically.
-[@82645]
+<sup>  [@82645]  </sup>
 
-## Variety {#sec:org7e52766}
+## Variety
 
 Consider a set of functions $F=\left\{ f_{1},f_{2},f_{3},\ldots
    f_{s}\right\}$, the variety of this set of functions is denoted
@@ -306,7 +306,7 @@ The convention is that all functions in $F$ are set to be equal to 0,
 and if this convention is taken, the variety of that set is the set of
 solutions corresponding to that set of equations.
 
-### Example {#sec:org869ba3a}
+### Example
 
 Consider for example the set $\left\{ -y+x^{2}-1,-y+1\right\}$, the
 solution to this system can be found by substitution:
@@ -321,13 +321,13 @@ and so:
 
 $$\boldsymbol{V}\left(\left\{ -y+x^{2}-1,-y+1\right\}\right)=\left\{ \left(-\sqrt{2},1\right),\left(\sqrt{2},1\right)\right\}$$
 
-## Ideals {#sec:org4222d78}
+## Ideals
 
 Ideals are a set with a particularly convenient property, given
 functions $f,g\in K\left[\mathbf{X}_n\right]$, a subring
 $I\subset K\left[\textbf{X}\right]$ is said to be an ideal if it is
 closed under addition and admits other functions under multiplication:
-[@hibiGrobnerBasesStatistics2014 §1.1.3]
+<sup>  [@hibiGrobnerBasesStatistics2014 §1.1.3]  </sup>
 
 1.  $f\in I \land g \in I \implies f+g \in I$
 
@@ -349,7 +349,7 @@ shown that:
 for all ideals in all variables and that is an ideal (because otherwise
 the result would not be admitted to $I$).
 
-### Example {#sec:org7443404}
+### Example
 
 Let $R = \mathbb{Z}$ and $I=2\mathbb{Z}$, the set of $\mathbb{Z}$ is a
 commutative ring with unity, $2\mathbb{Z}
@@ -362,25 +362,25 @@ commutative ring with unity, $2\mathbb{Z}
 3.  admits any other integer under multiplication (i.e. even $\times$
     anything is even)
 
-## Ideals and Varieties {#sec:orga11e9e1}
+## Ideals and Varieties
 
 If we have a variety of $V \subset K^n$, we denote, $I\left( V \right)$
 as the set of all polynomials $f_i\in k\left[ \textbf{X} \right]$ :
-[@hibiGrobnerBasesStatistics2014 §1.1.3]
+<sup>  [@hibiGrobnerBasesStatistics2014 §1.1.3]  </sup>
 
 $$\begin{aligned}
       f_i\left( a_1, a_2, a_3, \ldots a_n \right) =0, \quad \forall \left( a_1, a_2, a_3, \ldots a_n \right) \in V
 .\end{aligned}$$
 
 this set of functions satisfies the properties of an ideal and is known
-as the ideal of V [@coxIdealsVarietiesAlgorithms1997].
+as the ideal of V <sup>  [@coxIdealsVarietiesAlgorithms1997]  </sup>.
 
 In other words, the ideal of the variety of a set of functions,
 $I\left( \mathbf{V}\left(F\right) \right)$, is the set of, polynomials,
 that have the same zero-points as the simultaneous zero points of all
 functions in $F$.
 
-## Generating Ideals {#sec:org509471c}
+## Generating Ideals
 
 The ideal generated by $F$ is:
 
@@ -391,7 +391,7 @@ $$\left\langle F\right\rangle =\left\{
 
 Such a set satisfies the properties of an ideal and is a subset of the
 functions that share the zero-points with $F$:
-[@coxIdealsVarietiesAlgorithms1997 p. 34]
+<sup>  [@coxIdealsVarietiesAlgorithms1997 p. 34]  </sup>
 
 $$\left\langle F \right\rangle \subseteq
     I\left(\boldsymbol{V}\left(F\right)\right)$$
@@ -400,12 +400,12 @@ $\left\langle F \right\rangle$ is the set of all the linear combinations
 of elements in $F$ with polynomials in $K\left[\mathbf{X}_n\right]$,
 another way to phrase it would be that $\left\langle F\right\rangle$ is
 the set of polynomial consequences of $F$
-[@coxIdealsVarietiesAlgorithms1997 p. 30].
+<sup>  [@coxIdealsVarietiesAlgorithms1997 p. 30]  </sup>.
 
 If some **finite** set of polynomials $F$, can generate an ideal $I$, it
 is said that $I$ is finitely generated and that $F$ is a basis for $I$.
 Every ideal in $K\left[\mathbf{X}_n\right]$ is finitely generated
-[@coxIdealsVarietiesAlgorithms1997 p. 77], this is known as *Hilbert's
+<sup>  [@coxIdealsVarietiesAlgorithms1997 p. 77]  </sup>, this is known as *Hilbert's
 Basis Theorem*, this is important because it means we if we had an
 algorithm that involved taking different polynomials from such a basis,
 that algorithm would eventually end.
@@ -415,7 +415,7 @@ variety, i.e. if two sets can generate the same set of functions,
 they'll have the same solutions (assuming that the set of functions is
 an ideal), this also implies
 
-### Initial Ideal {#sec:org445b6b1}
+### Initial Ideal
 
 The initial ideal:
 
@@ -426,14 +426,14 @@ $$\left\langle
 
 is generated by infinitely many monomials, namely the initial monomials,
 for the infinitely many polynomials in the ideal I.
-[@hibiGrobnerBasesStatistics2014 §1.1.5]
+<sup>  [@hibiGrobnerBasesStatistics2014 §1.1.5]  </sup>
 
 It's common also to see a similar definition for the ideal generated by
 the leading terms is denoted $\left\langle
   \mathrm{LT}\left(f\right)\right\rangle$
-[@coxIdealsVarietiesAlgorithms1997 §2.5].
+<sup>  [@coxIdealsVarietiesAlgorithms1997 §2.5]  </sup>.
 
-### Comparison with Linear Algebra {#sec:org76c6b95}
+### Comparison with Linear Algebra
 
 If $S$ is some set of vectors and every vector in a vector subspace $V$
 can be written as a linear combination of the elements of $S$ is is said
@@ -445,8 +445,8 @@ $S=\left\{1, x, x^2\right\}$ spans $P_2$.
 Ideals for rings are similar in nature to vector subspaces and normal
 subgroups. It's worth drawing attention to the fact that that the term
 basis in the context of an ideal (which could be more accurately called
-a generating set [@sturmfelsSolvingSystemsPolynomial2002]) is quite
-different from a linear basis [@coxIdealsVarietiesAlgorithms1997 p. 35].
+a generating set <sup>  [@sturmfelsSolvingSystemsPolynomial2002]  </sup>) is quite
+different from a linear basis <sup>  [@coxIdealsVarietiesAlgorithms1997 p. 35]  </sup>.
 
 In linear algebra a basis spans and is linearly independent, the basis
 of an ideal however only spans, there is no independence, for example:
@@ -474,9 +474,9 @@ $$0=g_{i}y+g_{j}x,\quad\not\!\!\!\implies g_i=g_j=0, \quad \forall g_{i}g_{j}\in
 So linear independence doesn't have a lot of meaning with polynomials,
 it's only the spanning property that is meaningful.
 
-# Initials and Leading Monomials {#sec:orgec30a02}
+# Initials and Leading Monomials
 
-## Monomial Ordering {#sec:orga3337ef}
+## Monomial Ordering
 
 Monomials are ordered by degree, e.g. $x \prec x^2$ or $xyz
    \prec x^2yz$, however in many variables it isn't always clear which
@@ -499,11 +499,11 @@ discussion appears further below in
 §[9.2](#sec:org5a0a339){reference-type="ref"
 reference="sec:org5a0a339"}.
 
-# Groebner Bases {#sec:orgd4f4ac5}
+# Groebner Bases
 
 A finite subset $G$ of an ideal $I$ is a Grobner Basis, (with respect to
 some term order $\prec$, if:
-[@berndsturmfelsIntroductionGrobnerBases2017a; @hibiGrobnerBasesStatistics2014]
+<sup>  [@berndsturmfelsIntroductionGrobnerBases2017a; @hibiGrobnerBasesStatistics2014]  </sup>
 
 $$\left\{ \mathrm{in}_{\prec}\left(g\right)\mid g\in G\right\}$$
 
@@ -511,7 +511,7 @@ generates $\left\{ \mathrm{in}_{\prec}\left(I\right)\right\}$
 
 It's common also to see this definition reformulated with respect to
 leading terms as opposed to initial monomials, in which case $G$ is said
-to be a Groebner Bases if: [@coxIdealsVarietiesAlgorithms1997 2.5]
+to be a Groebner Bases if: <sup>  [@coxIdealsVarietiesAlgorithms1997 2.5]  </sup>
 
 $$\mathrm{LT}\left(I\right)=\left\langle \mathrm{LT}\left(g_{1}\right),\mathrm{LT}\left(g_{2}\right),\mathrm{LT}\left(g_{3}\right),\ldots\mathrm{LT}\left(g_{n}\right)\right\rangle$$
 
@@ -530,18 +530,18 @@ is a Grobner Basis for F, then $V(G)=V(F)$.
 The reason we care about a Groebner Bases more generally is because the
 set tends to provide more information of the solution space.
 
-# Buchberger's Criterion {#sec:orgb4fdca1}
+# Buchberger's Criterion
 
 $G$ is a Groebner basis, if and only if, every $S$-polynomial formed by
 any two pairs from $G$ has a remainder of 0, where the S-polynomial is
-given by: [@coxIdealsVarietiesAlgorithms1997 §2.6]
+given by: <sup>  [@coxIdealsVarietiesAlgorithms1997 §2.6]  </sup>
 
 $$S\left(f,g\right)=\mathrm{lcm}\left(\mathrm{LM}\left(f\right),\mathrm{LM}\left(g\right)\right)\times\left(\frac{f}{\mathrm{LT}\left(f\right)}-\frac{g}{\mathrm{LT}\left(g\right)}\right)$$
 The remainder that we are concerned with is:
 
 $$r = {\overline{S(f,g)}^{_G}} = S(f,g) \mod \prod_{g\in G} \left(G \right)$$
 
-# Bucherger's Algorithm {#sec:org5742e82}
+# Bucherger's Algorithm
 
 Buchberger's Algorithm takes a set of polynomials, $F$ and eventually
 returns another set $G$ which is a Groebner Bases.
@@ -551,12 +551,12 @@ criterion above, if the remainder for any pair is non zero, it is placed
 into $F$ as another polynomial. Once every combination has been
 considered, the original set $F$ will be a Groebner Basis.
 
-## Reduced Groebner Basis {#sec:org8d408a4}
+## Reduced Groebner Basis
 
 A reduced Groebner Basis is a Groebner Basis that has needless
 polynomials discarded, I have not had time to investigate these yet.
 
-## Examples {#sec:orge2124cf}
+## Examples
 
 for examples of Buchberger's Algorithm, refer to the attached *Jupyter
 Notebook*, this is quite sparse as resources to understand the algorithm
@@ -564,7 +564,7 @@ were discovered quite late in the investigation as was the realisation
 that use `sympy` had a significant amount of documentation on the
 algorithm.
 
-# Abstract Algebra {#sec:org3828c0d}
+# Abstract Algebra
 
 The following are concepts that are *nice to have* in understanding the
 topic, but are not strictly necessary to get a broad understanding of
@@ -572,14 +572,14 @@ the topic.
 
 They were needlessly investigated early on because accessible resources
 (e.g.
-[@coxIdealsVarietiesAlgorithms1997; @andreasschulzIntegerProgrammingCombinatorial; @sympydevelopmentteamSympyPolysGroebnertools])
+<sup>  [@coxIdealsVarietiesAlgorithms1997; @andreasschulzIntegerProgrammingCombinatorial; @sympydevelopmentteamSympyPolysGroebnertools]  </sup>)
 had not yet been discovered.
 
-## Background {#sec:orga0d603b}
+## Background
 
-### Algebra {#sec:orgc7a5871}
+### Algebra
 
-#### Relations {#sec:org743ec47}
+#### Relations
 
 A relation on a set $A$ is a subset $R$ of the Cartesian product:
 
@@ -587,7 +587,7 @@ $$A\times A=\left\{ \left(a,b\right):\enspace a,b\in A\right\}$$
 
 If $(a,b)\in R$ it is written that $a\enspace R \enspace b$.
 
-##### Example {#sec:orga52d81f}
+##### Example
 
 The example most relevant to the theory of Groebner bases [^4] is the
 `<` relation. If we had the set $A = \left\{ 1,\ 2,\ 3 \right\}$
@@ -612,7 +612,7 @@ and so it is said that:
 
 -   $2<3$
 
-##### Types of Relations {#sec:org6926688}
+##### Types of Relations
 
 -   **Reflexive** relations are relations where
 
@@ -631,7 +631,7 @@ and so it is said that:
 If all of these are satisfied, the relation is said to be *an
 equivalence relation*.
 
-##### Why? {#sec:org8b897fd}
+##### Why?
 
 Although this might seem needlessly pedantic, the algorithm we hope to
 use to find solutions to systems of polynomial equations, Buchberger's
@@ -653,9 +653,9 @@ $$\begin{aligned}
 This is already pretty confusing so having a firm definition of ordering
 is important.
 
-#### Congruence {#sec:org613b72d}
+#### Congruence
 
-##### Equivalence Classes {#sec:orge6d7a52}
+##### Equivalence Classes
 
 The set of all elements of $A$ that satisfy the relation for $a$ is said
 to be the /equivalence class of $a$ with respect to $R$:
@@ -672,7 +672,7 @@ reference="sec:orga52d81f"}, we would have:
 
 -   $[3]_<=\left\{1, 2\right\}$
 
-##### Congruence Modulo $n$ {#sec:org8e95ae6}
+##### Congruence Modulo $n$
 
 It is said that $a$ and $b$ are *congruent modulo $n$* if
 $n\mid \left(a-b\right)$ and it is written:
@@ -697,7 +697,7 @@ $$\left\lbrack a \right\rbrack_{n} = \{ b\mathbb{\in Z\ :}b \equiv a\ \left( \te
 
     $$\left[1\right]_{2}+\left[3\right]_{2}=\left[0\right]_{2}$$
 
-    See also [@roberthowlettUndergraduateCourseAbstract §4c]
+    See also <sup>  [@roberthowlettUndergraduateCourseAbstract §4c]  </sup>
 
 2.  Congruence generalised with Groups
     [\[sec:org618b634\]]{#sec:org618b634 label="sec:org618b634"} If $G$
@@ -729,7 +729,7 @@ $$\left\lbrack a \right\rbrack_{n} = \{ b\mathbb{\in Z\ :}b \equiv a\ \left( \te
 
     $$5 \equiv 17 \pmod{12\mathbb{Z}}$$
 
-    See [@gregoryleeAbstractAlgebra2018 §3.7].
+    See <sup>  [@gregoryleeAbstractAlgebra2018 §3.7]  </sup>.
 
 3.  Congruence Modulo an Ideal [\[sec:orgb24e478\]]{#sec:orgb24e478
     label="sec:orgb24e478"} Congruence can be extended to an ideal on
@@ -776,7 +776,7 @@ $$\left\lbrack a \right\rbrack_{n} = \{ b\mathbb{\in Z\ :}b \equiv a\ \left( \te
 
     This is known as the left coset [@judsonAbstractAlgebraTheory2016
     §6.1]. The left cosets of $H$ in $G$ partition G:
-    [@gregoryleeAbstractAlgebra2018 §3.3]
+    <sup>  [@gregoryleeAbstractAlgebra2018 §3.3]  </sup>
 
     1.  Each $a\in G$ is in onlyone left coset, which is $aH$
 
@@ -810,7 +810,7 @@ $$\left\lbrack a \right\rbrack_{n} = \{ b\mathbb{\in Z\ :}b \equiv a\ \left( \te
 
     $$f-g \in I \implies f \equiv g \pmod{I}$$
 
-#### Groups {#sec:org5e14bec}
+#### Groups
 
 A set $G$ is a group, if there in a binary operation, $\star$, defined
 on that set such that:
@@ -837,7 +837,7 @@ on that set such that:
                                & a\star a^{-1} = e\end{aligned}$$
 
     -   For operations that are additive in nature, it is common to use
-        the notation: $-a$ [@gregoryleeAbstractAlgebra2018 §3.3]
+        the notation: $-a$ <sup>  [@gregoryleeAbstractAlgebra2018 §3.3]  </sup>
 
 5.  If the binary operation is also commutative, the group is said to be
     abelian:
@@ -846,7 +846,7 @@ on that set such that:
     \forall a,b \in G,& \nonumber \\
             & a \star b = b \star a \iff G \text{ is abelian.} \end{aligned}$$
 
-##### Example {#sec:orgb09c6ab}
+##### Example
 
 An example of a group is a set of all matrices of a given size under
 addition, this can be seen because:
@@ -863,22 +863,22 @@ This example would also be an abelian group because addition is
 commutative.
 
 Note that if the operation was matrix multiplication, $\cdot$ (denoted
-as `%%` in ***R*** [@rcoreteamLanguageEnvironmentStatistical2020]), only
+as `%%` in ***R*** <sup>  [@rcoreteamLanguageEnvironmentStatistical2020]  </sup>), only
 square matrices with a non-zero determinant (e.g.
 $\left\lvert\mathbf{A}\right\rvert \neq 0$) could be a group. This is
 because the matrix would need to be invertible. [^5]
 
-##### But Why? {#sec:orgcb36d8d}
+##### But Why?
 
 The reason groups are interesting is because many natural structures can
 be described by a set and a binary operation, obvious examples are sets
 of numbers, vectors, matrices and equations, but more generally Group
 theory can be used to describe puzzles like *Rubik's Cube*
-[@joynerAdventuresGroupTheory2002], chemical structures
-[@GroupTheoryIts2013] and has been used in the theory of quantum
-mechanics [@tinkhamGroupTheoryQuantum2003]. [^6]
+<sup>  [@joynerAdventuresGroupTheory2002]  </sup>, chemical structures
+<sup>  [@GroupTheoryIts2013]  </sup> and has been used in the theory of quantum
+mechanics <sup>  [@tinkhamGroupTheoryQuantum2003]. [^6]  </sup>
 
-#### Rings {#sec:orgb572ffe}
+#### Rings
 
 Examples, equivalence class ring [@judsonAbstractAlgebraTheory2016 Ch.
 3] see also §2.4 of nicodemii [@nicodemiIntroductionAbstractAlgebra2007a
@@ -887,10 +887,10 @@ Examples, equivalence class ring [@judsonAbstractAlgebraTheory2016 Ch.
 Rings are an abelian group under addition $+$, with a second binary
 operation that corresponds to multiplication $\times$, this operatuion
 must be closed, associative and distributive, but there is no need for
-an inverse or identity [@gregoryleeAbstractAlgebra2018 §8.1]. So a ring
+an inverse or identity <sup>  [@gregoryleeAbstractAlgebra2018 §8.1]  </sup>. So a ring
 structure is a set $\mathcal{R}$, with two closed binary operations,
 that satisfies the following axioms of a ring
-[@nicodemiIntroductionAbstractAlgebra2007a §§2.4-2.6]:
+<sup>  [@nicodemiIntroductionAbstractAlgebra2007a §§2.4-2.6]  </sup>:
 
 1.  Associativity of Addition
 
@@ -926,7 +926,7 @@ that satisfies the following axioms of a ring
 
     -   $\left( \forall a,b,c, \in \mathcal{R} \right)\left( a +  b \right)\cdot   c = \left( a \cdot   c  \right)+  \left( b \cdot   c \right)$
 
-##### Further Axioms {#sec:orgea4f752}
+##### Further Axioms
 
 Other conditions that correspond to different classes of rings are:
 
@@ -947,7 +947,7 @@ Other conditions that correspond to different classes of rings are:
 
     $\left( \exists 1 \in \mathcal{R} \right) \left( \forall a \in \mathcal{R} \right) 1 \cdot  a = a \cdot  1 = a$
 
-##### Example {#sec:orge6fc582}
+##### Example
 
 An obvious example of a ring is the set of all integers $\mathbb{Z}$
 with the ordinary meaning of addition and multiplication. A more
@@ -967,12 +967,12 @@ to give 0 and the other to give 1, however, in many algebraic structures
 (e.g. $\mathbb{Q}, \mathbb{R}$ or $\mathbb{C}$) every element has a
 multiplicative inverse, and this motivates the next algebraic structure.
 
-#### Integral Domains {#sec:org75b9387}
+#### Integral Domains
 
 An integral domain is a commutative ring with identity that has no zero
 divisors.
 
-##### Example {#sec:orgce15308}
+##### Example
 
 The obvious example of an integral domain is $\mathbb{Z}$, but any
 $\mathbb{Z}_p$ where $p$ is a prime number, will also be an integral
@@ -999,7 +999,7 @@ $f^{-1}(x)=\frac{1}{x}$, but this is not a polynomial.
 This leads to the final algebraic structure that will be considered
 here. [^7]
 
-#### Fields {#sec:org5f09c06}
+#### Fields
 
 A field is a commutative ring with identity in which all non-zero
 elements are units.
@@ -1013,19 +1013,19 @@ element is not a zero-divisor, and so hence a field is:
 
 -   a special case of a group.
 
-#### Rings and Integral Domains {#sec:org44ae102}
+#### Rings and Integral Domains
 
 It seems that the reason the theory of Groebner Bases is concerned with
 the ring of polynomials over a field is related to the irreducibility of
-the polynomial, see generally [@EquivalenceDefinitionsIrreducible].
+the polynomial, see generally <sup>  [@EquivalenceDefinitionsIrreducible]  </sup>.
 
 Note also that the Ring of polynomials over an integral domain (a
 property satisfied also by a field) is more accurately an integral
 domain
-[@sympydevelopmentteamBasicFunctionalityModule; @RingPolynomialForms],
+<sup>  [@sympydevelopmentteamBasicFunctionalityModule; @RingPolynomialForms]  </sup>,
 not merely a ring.
 
-##### Why aren't Polynomials fields {#sec:orgb4f303f}
+##### Why aren't Polynomials fields
 
 A field is an integral domain, for which every element has an inverse,
 so consider some function, say $g(x)=x$, if the set of polynomials was a
@@ -1039,7 +1039,7 @@ $$0 \cdot f(0) = 1$$
 
 well... this clearly doesn't work, so it's clear that this $f(x)$
 doesn't exist and so the set of polynomials is not a field, see
-generally [@billdubuqueAbstractAlgebraWhy]
+generally <sup>  [@billdubuqueAbstractAlgebraWhy]  </sup>
 
 One might wonder if there's a good reason why $f(x)=\frac{1}{x}$ isn't
 considered a polynomial, notwithstanding the fact that it doesn't quite
@@ -1055,7 +1055,7 @@ fix this example with 0:
 The easy and uninformative answer is that $\frac{1}{x}$ does not have
 positive indices, outright violating the definition.
 
-### Vector Spaces {#sec:orgb05a40f}
+### Vector Spaces
 
 The ring of polynomials over a field $K$:
 
@@ -1066,22 +1066,22 @@ products:
 
 $$\left\{x_1^{\beta_1}, x_2^{\beta_2}, x_3^{\beta_3}, \ldots x_n^{\beta_n} \right\}$$
 
-#### Basis {#sec:org0905961}
+#### Basis
 
-A basis is a set of vectors that [@axlerLinearAlgebraDone2014 p. 39]
+A basis is a set of vectors that <sup>  [@axlerLinearAlgebraDone2014 p. 39]  </sup>
 are:
 
 -   Linearly independent
 
 -   Spans an $n$-dimensional vector space??
 
-##### Linear Independence {#sec:org6448a14}
+##### Linear Independence
 
 a set of vectors are linearly independent if:
 
 $$a_{1}v_{1}+a_{2}v_{2}+a_{3}v_{3}\ldots=0 \iff a_{1}=a_{2}=a_{3}=\ldots=a_{m}$$
 
-##### Span {#sec:orgbadae51}
+##### Span
 
 The span of a set of vectors, is the set of all possible linear
 combinations of those vectors.
@@ -1094,7 +1094,7 @@ So for example: $$\begin{aligned}
 To visualize this in $\mathbb{R}^2$, imagine that by varying the scaling
 value of each vector, any point on $\mathbb{R}^2$ can be reached.
 
-#### Vectors {#sec:org1f848e4}
+#### Vectors
 
 A ring with unity is a vector space, however a vector space only needs
 to be closed under scalar multiplication. This means vector spaces are
@@ -1103,7 +1103,7 @@ example of a closed vector multiplication is element-wise
 multiplication, this is known as the hadamard product (think like
 mutliplying 'numpy' arrays.)
 
-## Monomial Orders {#sec:org5a0a339}
+## Monomial Orders
 
 [groebner bases of a system of
 equations](20210406222024-groebner_bases_of_a_system_of_equations.org) A
@@ -1162,7 +1162,7 @@ $\prec$ on $\mathcal{M}_n$:
 
 2.  $u, v\in \mathcal{M}_n \land u \prec v \implies uw \prec vw, \forall w \in \mathcal{M}_n$
 
-#### Lexical monomial order {#sec:orgca3f61a}
+#### Lexical monomial order
 
 Let:
 
@@ -1228,20 +1228,20 @@ polynomial long division is:
 $$\mathrm{in}_{\prec}\left( f \cdot g \right) = \mathrm{in}_{\prec}\left( f \right) \mathrm{in}_{\prec}\left( g \right) 
  .$$
 
-#### Colloquial {#sec:org93e3f5b}
+#### Colloquial
 
-##### Lexicographic {#sec:org3730d87}
+##### Lexicographic
 
 The highest variable is so expensive that it makes the entire monomial
 expensive.
 
-##### Reverse Lexicographic {#sec:org6c77df3}
+##### Reverse Lexicographic
 
 The lowest variable is so chap that it makes the entire monomial cheap.
 
-## Dickson's Lemma {#sec:org71762fc}
+## Dickson's Lemma
 
-### Divisors {#sec:org2b3dd0c}
+### Divisors
 
 For *monomials*:
 
@@ -1252,7 +1252,7 @@ For *monomials*:
 $u$ is said to divide $v$ if
 $a_i \leq b_i \quad \forall i \in \left[ 1, n \right]$
 
-#### Example {#sec:org85e8673}
+#### Example
 
 Consider:
 
@@ -1270,7 +1270,7 @@ $$\begin{aligned}
       \frac{u}{v} &= \frac{x^2}{x^1} \cdot \frac{y^3}{y^2} \cdot  \frac{z^5}{z^3}
 .\end{aligned}$$
 
-### Minimal Element {#sec:org5f6d987}
+### Minimal Element
 
 let $\mathcal{M}_n$ be the set of a all monomials in the variables
 $x_1, x_2, x_3, \ldots x_n$ and $M \subset \mathcal{M}_n$ be a nonempty
@@ -1283,7 +1283,7 @@ $$\left(v \in M \land v \mid u\right) \implies v = u$$
 In other words, $u$ is a minimal element if the only way that $v
     \mid u$ is if $v = u$.
 
-#### Example {#sec:orgef073aa}
+#### Example
 
 Consider $\mathcal{M}_2$:
 
@@ -1303,11 +1303,11 @@ $$\left\{x^2y\right\}$$
 clearly $\left\lvert M \right\rvert = \infty$, however this number of mi
 um elements will always be finite, this is known as **Dickson's Lemma**.
 
-### Dickson's Lemma {#sec:orga0a8af0}
+### Dickson's Lemma
 
 > /Dickson's Lemma is the main result needed to prove the termination of
 > Buchberger's algorithm for computing Groebner basis of polynomial
-> ideals/ [@martin-mateosFormalProofDickson2003].
+> ideals/ <sup>  [@martin-mateosFormalProofDickson2003]  </sup>.
 
 Let
 
@@ -1323,7 +1323,7 @@ This intuitively makes sense, I can't have an infinite number of
 minimums, otherwise they wouldn't be minimums, the proof is very
 difficult though.
 
-#### In one Variable {#sec:org77f5313}
+#### In one Variable
 
 By definition, a monomial is raised to the power of a non-zero integer,
 in a single variable monomial the smallest index will correspond to the
@@ -1331,7 +1331,7 @@ minimal element (by the definition of the minimal element) and hence the
 existence of a minimum element in implies the existence of a minimum
 element in $M\subset \mathcal{M}_n$.
 
-#### In Two Variables {#sec:orgc4d2085}
+#### In Two Variables
 
 Assume that there is an infinite number of minimal elements:
 
@@ -1368,7 +1368,7 @@ This means that $b_i$ represents an upper bound for the number of
 different minimal elements, hence the number of minimal elements must be
 finite.
 
-#### In $n$ variables[induction]{.smallcaps} {#sec:orgb0a1960}
+#### In $n$ variables[induction]{.smallcaps}
 
 If the number of minimal elements is finite for $M_n \subset
      \mathcal{M}_n$ we would expect $M_{n+1}$ to be finite as well,
@@ -1401,11 +1401,11 @@ I need to formalise this as per [@hibiGrobnerBasesStatistics2014
 [^5]: although the element-wise product, $\odot$, would not present this
     issue.
 
-[^6]: See generally this [@19328] *Stack Exchange Discussion*.
+[^6]: See generally this <sup>  [@19328]  </sup> *Stack Exchange Discussion*.
 
 [^7]: There are other algebraic structures that could be interesting,
     for example polynomials can also be considered as vectors, see e.g.
-    [@larsonElementaryLinearAlgebra1991a], as a matter of fact all
+    <sup>  [@larsonElementaryLinearAlgebra1991a]  </sup>, as a matter of fact all
     vector spaces are rings if multiplication is defined element-wise by
     the *Hadamard product* ($\odot$), this could be an interesting
     relationship to investigate further.
